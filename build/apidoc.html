@@ -1,0 +1,1661 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Knockout-Contrib/Knockout-Validation"
+
+    >knockout.validation (v2.0.3)</a>
+</h1>
+<h4>A KnockoutJS Plugin for model and property validation</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knockout.validation">module knockout.validation</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.addAnonymousRule">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>addAnonymousRule
+            <span class="apidocSignatureSpan">(observable, ruleObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.addExtender">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>addExtender
+            <span class="apidocSignatureSpan">(ruleName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.addRule">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>addRule
+            <span class="apidocSignatureSpan">(observable, rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.defineLocale">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>defineLocale
+            <span class="apidocSignatureSpan">(name, values)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.formatMessage">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>formatMessage
+            <span class="apidocSignatureSpan">(message, params, observable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.group">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>group
+            <span class="apidocSignatureSpan">(obj, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.init">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>init
+            <span class="apidocSignatureSpan">(options, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.insertValidationMessage">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>insertValidationMessage
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.locale">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>locale
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.localize">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>localize
+            <span class="apidocSignatureSpan">(msgTranslations)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.makeBindingHandlerValidatable">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>makeBindingHandlerValidatable
+            <span class="apidocSignatureSpan">(handlerName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.parseInputValidationAttributes">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>parseInputValidationAttributes
+            <span class="apidocSignatureSpan">(element, valueAccessor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.registerExtenders">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>registerExtenders
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.reset">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.setRules">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>setRules
+            <span class="apidocSignatureSpan">(target, definition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.validateObservable">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>validateObservable
+            <span class="apidocSignatureSpan">(observable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.writeInputValidationAttributes">
+            function <span class="apidocSignatureSpan">knockout.validation.</span>writeInputValidationAttributes
+            <span class="apidocSignatureSpan">(element, valueAccessor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.</span>configuration</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.</span>rules</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.</span>validation.configuration</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.</span>validation.utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knockout.validation.configuration">module knockout.validation.configuration</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>allowHtmlMessages</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>decorateElementOnModified</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>decorateInputElement</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>errorsAsTitle</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>errorsAsTitleOnModified</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>insertMessages</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>messagesOnModified</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>parseInputAttributes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>registerExtenders</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">knockout.validation.configuration.</span>writeInputAttributes</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.configuration.reset">
+            function <span class="apidocSignatureSpan">knockout.validation.configuration.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.configuration.</span>errorClass</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.configuration.</span>grouping</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.configuration.</span>html5Attributes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.configuration.</span>html5InputTypes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.configuration.</span>messageTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knockout.validation.configuration.</span>validate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">knockout.validation.configuration.</span>errorElementClass</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">knockout.validation.configuration.</span>errorMessageClass</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knockout.validation.utils">module knockout.validation.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.async">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>async
+            <span class="apidocSignatureSpan">(expr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.contextFor">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>contextFor
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.forEach">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>forEach
+            <span class="apidocSignatureSpan">(object, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.getAttribute">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getAttribute
+            <span class="apidocSignatureSpan">(element, attr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.getConfigOptions">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getConfigOptions
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.getDomData">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getDomData
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.getOriginalElementTitle">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getOriginalElementTitle
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.getValue">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getValue
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.hasAttribute">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>hasAttribute
+            <span class="apidocSignatureSpan">(node, attr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.insertAfter">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>insertAfter
+            <span class="apidocSignatureSpan">(node, newNode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.isArray">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isArray
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.isEmptyVal">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isEmptyVal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.isNumber">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isNumber
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.isObject">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isObject
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.isObservableArray">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isObservableArray
+            <span class="apidocSignatureSpan">(instance)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.isValidatable">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isValidatable
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.newId">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>newId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.setAttribute">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>setAttribute
+            <span class="apidocSignatureSpan">(element, attr, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.setDomData">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>setDomData
+            <span class="apidocSignatureSpan">(node, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knockout.validation.utils.values">
+            function <span class="apidocSignatureSpan">knockout.validation.utils.</span>values
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knockout.validation" id="apidoc.module.knockout.validation">module knockout.validation</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.addAnonymousRule" id="apidoc.element.knockout.validation.addAnonymousRule">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>addAnonymousRule
+        <span class="apidocSignatureSpan">(observable, ruleObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addAnonymousRule = function (observable, ruleObj) {
+			if (ruleObj[&#x27;message&#x27;] === undefined) {
+				ruleObj[&#x27;message&#x27;] = &#x27;Error&#x27;;
+			}
+
+			//make sure onlyIf is honoured
+			if (ruleObj.onlyIf) {
+				ruleObj.condition = ruleObj.onlyIf;
+			}
+
+			//add the anonymous rule to the observable
+			kv.addRule(observable, ruleObj);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.addExtender" id="apidoc.element.knockout.validation.addExtender">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>addExtender
+        <span class="apidocSignatureSpan">(ruleName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addExtender = function (ruleName) {
+			ko.extenders[ruleName] = function (observable, params) {
+				//params can come in a few flavors
+				// 1. Just the params to be passed to the validator
+				// 2. An object containing the Message to be used and the Params to pass to the validator
+				// 3. A condition when the validation rule to be applied
+				//
+				// Example:
+				// var test = ko.observable(3).extend({
+				//	  max: {
+				//		  message: &#x27;This special field has a Max of {0}&#x27;,
+				//		  params: 2,
+				//		  onlyIf: function() {
+				//					  return specialField.IsVisible();
+				//				  }
+				//	  }
+				//  )};
+				//
+				if (params &#x26;&#x26; (params.message || params.onlyIf)) { //if it has a message or condition object, then its an object literal to
+use
+					return kv.addRule(observable, {
+						rule: ruleName,
+						message: params.message,
+						params: utils.isEmptyVal(params.params) ? true : params.params,
+						condition: params.onlyIf
+					});
+				} else {
+					return kv.addRule(observable, {
+						rule: ruleName,
+						params: params
+					});
+				}
+			};
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.addRule" id="apidoc.element.knockout.validation.addRule">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>addRule
+        <span class="apidocSignatureSpan">(observable, rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addRule = function (observable, rule) {
+			observable.extend({ validatable: true });
+
+			var hasRule = !!koUtils.arrayFirst(observable.rules(), function(item) {
+				return item.rule &#x26;&#x26; item.rule === rule.rule;
+			});
+
+			if (!hasRule) {
+				//push a Rule Context to the observables local array of Rule Contexts
+				observable.rules.push(rule);
+			}
+			return observable;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.defineLocale" id="apidoc.element.knockout.validation.defineLocale">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>defineLocale
+        <span class="apidocSignatureSpan">(name, values)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineLocale = function (name, values) {
+	if (name &#x26;&#x26; values) {
+		_locales[name.toLowerCase()] = values;
+		return values;
+	}
+	return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		// &#x3c;script&#x3e; tag: use the global `ko.validation` object
+		factory(ko.validation);
+	}
+}(function(kv) {
+	if (!kv || typeof kv.defineLocale !== &#x27;function&#x27;) {
+		throw new Error(&#x27;Knockout-Validation is required, please ensure it is loaded before this localization file&#x27;);
+	}
+return kv.<span class="apidocCodeKeywordSpan">defineLocale</span>(&#x27;ar-JO&#x27;, {
+    required: &#x27;مطلوب.&#x27;,
+    min: &#x27;أدخل قيمة اكبر من {0}.&#x27;,
+    max: &#x27;أدخل قيمة اقل من {0}.&#x27;,
+    minLength: &#x27;أدخل  {0} احرف أو أكثر.&#x27;,
+    maxLength: &#x27;أدخل {0} أحرف أو أقل.&#x27;,
+    pattern: &#x27;قيمة غير صحيحة.&#x27;,
+    step: &#x27;يجب ان تضاف بمقدار {0}.&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.formatMessage" id="apidoc.element.knockout.validation.formatMessage">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>formatMessage
+        <span class="apidocSignatureSpan">(message, params, observable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatMessage = function (message, params, observable) {
+			if (utils.isObject(params) &#x26;&#x26; params.typeAttr) {
+				params = params.value;
+			}
+			if (typeof message === &#x27;function&#x27;) {
+				return message(params, observable);
+			}
+			var replacements = unwrap(params);
+            if (replacements == null) {
+                replacements = [];
+            }
+			if (!utils.isArray(replacements)) {
+				replacements = [replacements];
+			}
+			return message.replace(/{(\d+)}/gi, function(match, index) {
+				if (typeof replacements[index] !== &#x27;undefined&#x27;) {
+					return replacements[index];
+				}
+				return match;
+			});
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.group" id="apidoc.element.knockout.validation.group">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>group
+        <span class="apidocSignatureSpan">(obj, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function group(obj, options) { // array of observables or viewModel
+			options = extend(extend({}, configuration.grouping), options);
+
+			var context = {
+				options: options,
+				graphMonitor: ko.observable(),
+				flagged: [],
+				subscriptions: [],
+				validatables: []
+			};
+
+			var result = null;
+
+			//if using observables then traverse structure once and add observables
+			if (options.observable) {
+				result = ko.computed(function () {
+					context.graphMonitor(); //register dependency
+					runTraversal(obj, context);
+					return collectErrors(context.validatables);
+				});
+			}
+			else { //if not using observables then every call to error() should traverse the structure
+				result = function () {
+					runTraversal(obj, context);
+					return collectErrors(context.validatables);
+				};
+			}
+
+			result.showAllMessages = function (show) { // thanks @heliosPortal
+				if (show === undefined) {//default to true
+					show = true;
+				}
+
+				result.forEach(function (observable) {
+					if (utils.isValidatable(observable)) {
+						observable.isModified(show);
+					}
+				});
+			};
+
+			result.isAnyMessageShown = function () {
+				var invalidAndModifiedPresent;
+
+				invalidAndModifiedPresent = !!result.find(function (observable) {
+					return utils.isValidatable(observable) &#x26;&#x26; !observable.isValid() &#x26;&#x26; observable.isModified();
+				});
+				return invalidAndModifiedPresent;
+			};
+
+			result.filter = function(predicate) {
+				predicate = predicate || function () { return true; };
+				// ensure we have latest changes
+				result();
+
+				return koUtils.arrayFilter(context.validatables, predicate);
+			};
+
+			result.find = function(predicate) {
+				predicate = predicate || function () { return true; };
+				// ensure we have latest changes
+				result();
+
+				return koUtils.arrayFirst(context.validatables, predicate);
+			};
+
+			result.forEach = function(callback) {
+				callback = callback || function () { };
+				// ensure we have latest changes
+				result();
+
+				forEach(context.validatables, callback);
+			};
+
+			result.map = function(mapping) {
+				mapping = mapping || function (item) { return item; };
+				// ensure we have latest changes
+				result();
+
+				return koUtils.arrayMap(context.validatables, mapping);
+			};
+
+			<span class="apidocCodeCommentSpan">/**
+			 * @private You should not rely on this method being here.
+			 * It&#x27;s a private method and it may change in the future.
+			 *
+			 * @description Updates the validated object and collects errors from it.
+			 */
+</span>			result._updateState = function(newValue) {
+				if (!utils.isObject(newValue)) {
+					throw new Error(&#x27;An object is required.&#x27;);
+				}
+				obj = newValue;
+				if (options.observable) {
+					context.graphMonitor.valueHasMutated();
+				}
+				else {
+					runTraversal(newValue, context);
+					return collectErrors(context.validatables);
+				}
+			};
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.init" id="apidoc.element.knockout.validation.init">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>init
+        <span class="apidocSignatureSpan">(options, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options, force) {
+			//done run this multiple times if we don&#x27;t really want to
+			if (isInitialized &#x3e; 0 &#x26;&#x26; !force) {
+				return;
+			}
+
+			//because we will be accessing options properties it has to be an object at least
+			options = options || {};
+			//if specific error classes are not provided then apply generic errorClass
+			//it has to be done on option so that options.errorClass can override default
+			//errorElementClass and errorMessage class but not those provided in options
+			options.errorElementClass = options.errorElementClass || options.errorClass || configuration.errorElementClass;
+			options.errorMessageClass = options.errorMessageClass || options.errorClass || configuration.errorMessageClass;
+
+			extend(configuration, options);
+
+			if (configuration.registerExtenders) {
+				kv.registerExtenders();
+			}
+
+			isInitialized = 1;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.insertValidationMessage" id="apidoc.element.knockout.validation.insertValidationMessage">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>insertValidationMessage
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insertValidationMessage = function (element) {
+			var span = document.createElement(&#x27;SPAN&#x27;);
+			span.className = utils.getConfigOptions(element).errorMessageClass;
+			utils.insertAfter(element, span);
+			return span;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.locale" id="apidoc.element.knockout.validation.locale">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>locale
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">locale = function (name) {
+	if (name) {
+		name = name.toLowerCase();
+
+		if (_locales.hasOwnProperty(name)) {
+			kv.localize(_locales[name]);
+			_currentLocale = name;
+		}
+		else {
+			throw new Error(&#x27;Localization &#x27; + name + &#x27; has not been loaded.&#x27;);
+		}
+	}
+	return _currentLocale;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x3c;script type=&#x22;text/javascript&#x22; src=&#x22;fr-FR.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script type=&#x22;text/javascript&#x22; src=&#x22;de-DE.js&#x22;&#x3e;&#x3c;/script&#x3e;
+```
+
+Apply localized messages
+
+```js
+ko.validation.<span class="apidocCodeKeywordSpan">locale</span>(&#x27;el-GR&#x27;);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.localize" id="apidoc.element.knockout.validation.localize">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>localize
+        <span class="apidocSignatureSpan">(msgTranslations)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">localize = function (msgTranslations) {
+	var rules = kv.rules;
+
+	//loop the properties in the object and assign the msg to the rule
+	for (var ruleName in msgTranslations) {
+		if (rules.hasOwnProperty(ruleName)) {
+			rules[ruleName].message = msgTranslations[ruleName];
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.makeBindingHandlerValidatable" id="apidoc.element.knockout.validation.makeBindingHandlerValidatable">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>makeBindingHandlerValidatable
+        <span class="apidocSignatureSpan">(handlerName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeBindingHandlerValidatable = function (handlerName) {
+			var init = ko.bindingHandlers[handlerName].init;
+
+			ko.bindingHandlers[handlerName].init = function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+
+				init(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext);
+
+				return ko.bindingHandlers[&#x27;validationCore&#x27;].init(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext);
+			};
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.parseInputValidationAttributes" id="apidoc.element.knockout.validation.parseInputValidationAttributes">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>parseInputValidationAttributes
+        <span class="apidocSignatureSpan">(element, valueAccessor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseInputValidationAttributes = function (element, valueAccessor) {
+			forEach(kv.configuration.html5Attributes, function (attr) {
+				if (utils.hasAttribute(element, attr)) {
+
+					var params = element.getAttribute(attr) || true;
+
+					if (attr === &#x27;min&#x27; || attr === &#x27;max&#x27;)
+					{
+						// If we&#x27;re validating based on the min and max attributes, we&#x27;ll
+						// need to know what the &#x27;type&#x27; attribute is set to
+						var typeAttr = element.getAttribute(&#x27;type&#x27;);
+						if (typeof typeAttr === &#x22;undefined&#x22; || !typeAttr)
+						{
+							// From http://www.w3.org/TR/html-markup/input:
+							//   An input element with no type attribute specified represents the
+							//   same thing as an input element with its type attribute set to &#x22;text&#x22;.
+							typeAttr = &#x22;text&#x22;;
+						}
+						params = {typeAttr: typeAttr, value: params};
+					}
+
+					kv.addRule(valueAccessor(), {
+						rule: attr,
+						params: params
+					});
+				}
+			});
+
+			var currentType = element.getAttribute(&#x27;type&#x27;);
+			forEach(kv.configuration.html5InputTypes, function (type) {
+				if (type === currentType) {
+					kv.addRule(valueAccessor(), {
+						rule: (type === &#x27;date&#x27;) ? &#x27;dateISO&#x27; : type,
+						params: true
+					});
+				}
+			});
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.registerExtenders" id="apidoc.element.knockout.validation.registerExtenders">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>registerExtenders
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerExtenders = function () { // root extenders optional, use &#x27;validation&#x27; extender if would cause conflicts
+			if (configuration.registerExtenders) {
+				for (var ruleName in kv.rules) {
+					if (kv.rules.hasOwnProperty(ruleName)) {
+						if (!ko.extenders[ruleName]) {
+							kv.addExtender(ruleName);
+						}
+					}
+				}
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+ko.validation.rules[&#x27;mustEqual&#x27;] = {
+    validator: function (val, otherVal) {
+        return val === otherVal;
+    },
+    message: &#x27;The field must equal {0}&#x27;
+};
+ko.validation.<span class="apidocCodeKeywordSpan">registerExtenders</span>();
+
+//the value &#x27;5&#x27; is the second arg (&#x27;otherVal&#x27;) that is passed to the validator
+var myCustomObj = ko.observable().extend({ mustEqual: 5 });
+```
+Learn more about Custom Rules on the [WIKI](https://github.com/Knockout-Contrib/Knockout-Validation/wiki/Custom-Validation-Rules
+)
+
+###Or Check out our [User-Contributed Custom Rules](https://github.com/Knockout-Contrib/Knockout-Validation/wiki/User-Contributed
+-Rules)!###
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.reset" id="apidoc.element.knockout.validation.reset">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+	extend(configuration, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.setRules" id="apidoc.element.knockout.validation.setRules">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>setRules
+        <span class="apidocSignatureSpan">(target, definition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setRules = function (target, definition) {
+			var setRules = function (target, definition) {
+				if (!target || !definition) { return; }
+
+				for (var prop in definition) {
+					if (!definition.hasOwnProperty(prop)) { continue; }
+					var ruleDefinitions = definition[prop];
+
+					//check the target property exists and has a value
+					if (!target[prop]) { continue; }
+					var targetValue = target[prop],
+						unwrappedTargetValue = unwrap(targetValue),
+						rules = {},
+						nonRules = {};
+
+					for (var rule in ruleDefinitions) {
+						if (!ruleDefinitions.hasOwnProperty(rule)) { continue; }
+						if (kv.rules[rule]) {
+							rules[rule] = ruleDefinitions[rule];
+						} else {
+							nonRules[rule] = ruleDefinitions[rule];
+						}
+					}
+
+					//apply rules
+					if (ko.isObservable(targetValue)) {
+						targetValue.extend(rules);
+					}
+
+					//then apply child rules
+					//if it&#x27;s an array, apply rules to all children
+					if (unwrappedTargetValue &#x26;&#x26; utils.isArray(unwrappedTargetValue)) {
+						for (var i = 0; i &#x3c; unwrappedTargetValue.length; i++) {
+							setRules(unwrappedTargetValue[i], nonRules);
+						}
+						//otherwise, just apply to this property
+					} else {
+						setRules(unwrappedTargetValue, nonRules);
+					}
+				}
+			};
+			setRules(target, definition);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.validateObservable" id="apidoc.element.knockout.validation.validateObservable">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>validateObservable
+        <span class="apidocSignatureSpan">(observable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateObservable = function (observable) {
+	var i = 0,
+		rule, // the rule validator to execute
+		ctx, // the current Rule Context for the loop
+		ruleContexts = observable.rules(), //cache for iterator
+		len = ruleContexts.length; //cache for iterator
+
+	for (; i &#x3c; len; i++) {
+
+		//get the Rule Context info to give to the core Rule
+		ctx = ruleContexts[i];
+
+		// checks an &#x27;onlyIf&#x27; condition
+		if (ctx.condition &#x26;&#x26; !ctx.condition()) {
+			continue;
+		}
+
+		//get the core Rule to use for validation
+		rule = ctx.rule ? kv.rules[ctx.rule] : ctx;
+
+		if (rule[&#x27;async&#x27;] || ctx[&#x27;async&#x27;]) {
+			//run async validation
+			validateAsync(observable, rule, ctx);
+
+		} else {
+			//run normal sync validation
+			if (!validateSync(observable, rule, ctx)) {
+				return false; //break out of the loop
+			}
+		}
+	}
+	//finally if we got this far, make the observable valid again!
+	observable.clearError();
+	return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.writeInputValidationAttributes" id="apidoc.element.knockout.validation.writeInputValidationAttributes">
+        function <span class="apidocSignatureSpan">knockout.validation.</span>writeInputValidationAttributes
+        <span class="apidocSignatureSpan">(element, valueAccessor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeInputValidationAttributes = function (element, valueAccessor) {
+			var observable = valueAccessor();
+
+			if (!observable || !observable.rules) {
+				return;
+			}
+
+			var contexts = observable.rules(); // observable array
+
+			// loop through the attributes and add the information needed
+			forEach(kv.configuration.html5Attributes, function (attr) {
+				var ctx = koUtils.arrayFirst(contexts, function (ctx) {
+					return ctx.rule &#x26;&#x26; ctx.rule.toLowerCase() === attr.toLowerCase();
+				});
+
+				if (!ctx) {
+					return;
+				}
+
+				// we have a rule matching a validation attribute at this point
+				// so lets add it to the element along with the params
+				ko.computed({
+					read: function() {
+						var params = ko.unwrap(ctx.params);
+
+						// we have to do some special things for the pattern validation
+						if (ctx.rule === &#x22;pattern&#x22; &#x26;&#x26; params instanceof RegExp) {
+							// we need the pure string representation of the RegExpr without the //gi stuff
+							params = params.source;
+						}
+
+						element.setAttribute(attr, params);
+					},
+					disposeWhenNodeIsRemoved: element
+				});
+			});
+
+			contexts = null;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knockout.validation.configuration" id="apidoc.module.knockout.validation.configuration">module knockout.validation.configuration</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.configuration.reset" id="apidoc.element.knockout.validation.configuration.reset">
+        function <span class="apidocSignatureSpan">knockout.validation.configuration.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+	extend(configuration, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knockout.validation.utils" id="apidoc.module.knockout.validation.utils">module knockout.validation.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.async" id="apidoc.element.knockout.validation.utils.async">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>async
+        <span class="apidocSignatureSpan">(expr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (expr) {
+			if (window.setImmediate) { window.setImmediate(expr); }
+			else { window.setTimeout(expr, 0); }
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.contextFor" id="apidoc.element.knockout.validation.utils.contextFor">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>contextFor
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">contextFor = function (node) {
+			switch (node.nodeType) {
+				case 1:
+				case 8:
+					var context = kv.utils.getDomData(node);
+					if (context) { return context; }
+					if (node.parentNode) { return kv.utils.contextFor(node.parentNode); }
+					break;
+			}
+			return undefined;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.forEach" id="apidoc.element.knockout.validation.utils.forEach">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>forEach
+        <span class="apidocSignatureSpan">(object, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forEach = function (object, callback) {
+			if (kv.utils.isArray(object)) {
+				return forEach(object, callback);
+			}
+			for (var prop in object) {
+				if (object.hasOwnProperty(prop)) {
+					callback(object[prop], prop);
+				}
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.getAttribute" id="apidoc.element.knockout.validation.utils.getAttribute">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getAttribute
+        <span class="apidocSignatureSpan">(element, attr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAttribute = function (element, attr) {
+			return element.getAttribute(attr);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.getConfigOptions" id="apidoc.element.knockout.validation.utils.getConfigOptions">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getConfigOptions
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfigOptions = function (element) {
+			var options = kv.utils.contextFor(element);
+
+			return options || kv.configuration;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.getDomData" id="apidoc.element.knockout.validation.utils.getDomData">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getDomData
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDomData = function (node) {
+			var key = node[domDataKey];
+
+			if (!key) {
+				return undefined;
+			}
+
+			return domData[key];
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.getOriginalElementTitle" id="apidoc.element.knockout.validation.utils.getOriginalElementTitle">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getOriginalElementTitle
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOriginalElementTitle = function (element) {
+			var savedOriginalTitle = kv.utils.getAttribute(element, &#x27;data-orig-title&#x27;),
+				currentTitle = element.title,
+				hasSavedOriginalTitle = kv.utils.hasAttribute(element, &#x27;data-orig-title&#x27;);
+
+			return hasSavedOriginalTitle ?
+				savedOriginalTitle : currentTitle;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.getValue" id="apidoc.element.knockout.validation.utils.getValue">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>getValue
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValue = function (o) {
+			return (typeof o === &#x27;function&#x27; ? o() : o);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.hasAttribute" id="apidoc.element.knockout.validation.utils.hasAttribute">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>hasAttribute
+        <span class="apidocSignatureSpan">(node, attr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasAttribute = function (node, attr) {
+			return node.getAttribute(attr) !== null;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.insertAfter" id="apidoc.element.knockout.validation.utils.insertAfter">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>insertAfter
+        <span class="apidocSignatureSpan">(node, newNode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insertAfter = function (node, newNode) {
+			node.parentNode.insertBefore(newNode, node.nextSibling);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.isArray" id="apidoc.element.knockout.validation.utils.isArray">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isArray
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isArray = function (o) {
+			return o.isArray || Object.prototype.toString.call(o) === &#x27;[object Array]&#x27;;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.isEmptyVal" id="apidoc.element.knockout.validation.utils.isEmptyVal">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isEmptyVal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEmptyVal = function (val) {
+			if (val === undefined) {
+				return true;
+			}
+			if (val === null) {
+				return true;
+			}
+			if (val === &#x22;&#x22;) {
+				return true;
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.isNumber" id="apidoc.element.knockout.validation.utils.isNumber">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isNumber
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNumber = function (o) {
+			return !isNaN(o);	
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.isObject" id="apidoc.element.knockout.validation.utils.isObject">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isObject
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isObject = function (o) {
+			return o !== null &#x26;&#x26; typeof o === &#x27;object&#x27;;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.isObservableArray" id="apidoc.element.knockout.validation.utils.isObservableArray">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isObservableArray
+        <span class="apidocSignatureSpan">(instance)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isObservableArray = function (instance) {
+			return !!instance &#x26;&#x26;
+					typeof instance[&#x22;remove&#x22;] === &#x22;function&#x22; &#x26;&#x26;
+					typeof instance[&#x22;removeAll&#x22;] === &#x22;function&#x22; &#x26;&#x26;
+					typeof instance[&#x22;destroy&#x22;] === &#x22;function&#x22; &#x26;&#x26;
+					typeof instance[&#x22;destroyAll&#x22;] === &#x22;function&#x22; &#x26;&#x26;
+					typeof instance[&#x22;indexOf&#x22;] === &#x22;function&#x22; &#x26;&#x26;
+					typeof instance[&#x22;replace&#x22;] === &#x22;function&#x22;;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.isValidatable" id="apidoc.element.knockout.validation.utils.isValidatable">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>isValidatable
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValidatable = function (o) {
+			return !!(o &#x26;&#x26; o.rules &#x26;&#x26; o.isValid &#x26;&#x26; o.isModified);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.newId" id="apidoc.element.knockout.validation.utils.newId">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>newId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">newId = function () {
+			return seedId += 1;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.setAttribute" id="apidoc.element.knockout.validation.utils.setAttribute">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>setAttribute
+        <span class="apidocSignatureSpan">(element, attr, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAttribute = function (element, attr, value) {
+			return element.setAttribute(attr, value);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.setDomData" id="apidoc.element.knockout.validation.utils.setDomData">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>setDomData
+        <span class="apidocSignatureSpan">(node, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDomData = function (node, data) {
+			var key = node[domDataKey];
+
+			if (!key) {
+				node[domDataKey] = key = kv.utils.newId();
+			}
+
+			domData[key] = data;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knockout.validation.utils.values" id="apidoc.element.knockout.validation.utils.values">
+        function <span class="apidocSignatureSpan">knockout.validation.utils.</span>values
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">values = function (o) {
+			var r = [];
+			for (var i in o) {
+				if (o.hasOwnProperty(i)) {
+					r.push(o[i]);
+				}
+			}
+			return r;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
